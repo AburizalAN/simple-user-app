@@ -13,7 +13,6 @@ import clsx from "clsx"
 import { GlobalContext } from "../context/globalContext"
 import withAuth from "../hocs/withAuth"
 import Button from "../reusable/Button"
-import Cookies from "js-cookie"
 
 const useFetchUser = (payload: any) => {
   const params = decodeURIComponent(new URLSearchParams(payload).toString())
@@ -36,7 +35,7 @@ const Home = () => {
   })
   const[isOpen, setIsOpen] = React.useState(false)
   const { data, isValidating }: any = useFetchUser(params)
-  const { addToGroup, removeFromGroup, group }: any = React.useContext(GlobalContext)
+  const { addToGroup, removeFromGroup, group, logout }: any = React.useContext(GlobalContext)
 
   const users = data?.results ?? []
 
@@ -51,11 +50,6 @@ const Home = () => {
     const data = JSON.stringify(user)
     localStorage.setItem("detail-user", data)
     navigate("/detail-user")
-  }
-
-  const logout = () => {
-    Cookies.remove("jwtToken");
-    window.location.reload();
   }
 
   return (

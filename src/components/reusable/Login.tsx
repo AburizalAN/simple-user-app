@@ -16,10 +16,8 @@ const Login = () => {
   const [passVisible, setPassVisible] = React.useState<boolean>(false);
 
   const {
-    register,
     handleSubmit,
     control,
-    watch,
     formState: { errors },
   } = useForm<Inputs>({ mode: "onChange" });
 
