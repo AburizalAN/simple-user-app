@@ -1,0 +1,67 @@
+$ease-out: cubic-bezier(0, 0.5, 0.25, 1);
+$ease-in: cubic-bezier(0.75, 0, 1, 0.5);
+
+@layer components {
+  .modal {
+    animation: modalIn 200ms forwards $ease-out;
+    z-index: 99999;
+    &.closing {
+      animation: modalOut 200ms forwards $ease-out;
+    }
+  }
+  .modal-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    animation: opacityIn 200ms forwards $ease-out;
+    &.closing {
+      animation: opacityOut 200ms forwards $ease-out;
+    }
+  }
+}
+
+@keyframes modalIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes opacityIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes opacityOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
