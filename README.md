@@ -13,16 +13,8 @@ Aplikasi ini menampilkan list random user yang datanya didapat dari API https://
 - tailwindcss
 
 ## Cara menginstall
+- setelah anda clone repository ke local komputer, buka root folder source codenya kemudian jalankan ```yarn install```, kemudian tunggu sampai proses instalasi selesai.
+- Setelai selesai install aplikasi di local komputer anda, jalankan ```yarn dev``` untuk menjalankan aplikasi di localhost.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+demo aplikasi bisa dilihat di :
+https://simple-user-app.vercel.app/
